@@ -12,7 +12,7 @@ module Hyrax
     raise ArgumentError if file.is_a?(Valkyrie::Resource) # maybe heavy handed?
 
     Hyrax.custom_queries.find_file_metadata_by(id: file.id)
-  rescue Hyrax::ObjectNotFoundError, Ldp::BadRequest => err
+  rescue Hyrax::ObjectNotFoundError, Ldp::BadRequest
     Hyrax.logger.debug('Could not find an existing metadata node for file ' \
                        "with id #{file.id}. Initializing a new one")
 
