@@ -13,7 +13,7 @@ RSpec.describe 'searching' do
     create(:public_collection_lw, title: ['collection title abc'], description: [subject_value], user: user, members: [work])
   end
 
-  context "as a public user", :clean_repo do
+  context "as a public user", :clean_repo do # rubocop:disable Lint/Debugger
     it "using the gallery view" do
       visit '/'
       fill_in "search-field-header", with: "Toothbrush"
@@ -23,7 +23,7 @@ RSpec.describe 'searching' do
         expect(page).to have_content "Toothbrush"
       end
 
-      binding.pry
+      byebug
 
       click_link "Gallery"
       expect(page).to have_content "Filtering by: Toothbrush"
@@ -61,5 +61,5 @@ RSpec.describe 'searching' do
       expect(page.body).to include "<span itemprop=\"keywords\"><a href=\"/catalog?f%5Bkeyword_sim%5D%5B%5D=taco&amp;locale=en\">taco</a></span>"
       expect(page.body).to include "<span itemprop=\"keywords\"><a href=\"/catalog?f%5Bkeyword_sim%5D%5B%5D=mustache&amp;locale=en\">mustache</a></span>"
     end
-  end
+  end # rubocop:enable Lint/Debugger
 end
