@@ -23,7 +23,7 @@ RSpec.describe 'searching' do
         expect(page).to have_content "Toothbrush"
       end
 
-      byebug
+      binding.pry
 
       click_link "Gallery"
       expect(page).to have_content "Filtering by: Toothbrush"
