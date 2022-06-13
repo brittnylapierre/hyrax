@@ -8,8 +8,8 @@ group :development, :test do
   gem 'easy_translate'
   gem 'i18n-tasks'
   gem 'okcomputer'
-  gem 'pry' unless ENV['CI']
-  gem 'pry-byebug' unless ENV['CI']
+  gem 'pry'
+  gem 'pry-byebug'
   gem 'ruby-prof', require: false
   gem "simplecov", require: false
 end
