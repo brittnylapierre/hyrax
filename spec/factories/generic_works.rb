@@ -11,6 +11,7 @@ FactoryBot.define do
     # It is reasonable to assume that a work has an admin set; However, we don't want to
     # go through the entire rigors of creating that admin set.
     before(:create) do |work, evaluator|
+      byebug
       if evaluator.with_admin_set
         attributes = {}
         attributes[:id] = work.admin_set_id if work.admin_set_id.present?

@@ -16,7 +16,7 @@ AllCops:
 
 Lint/Debugger:
   Exclude:
-    - spec/jobs/iiif_manifest_cache_prewarm_job_spec.rb
+    - spec/factories/generic_works.rb
 
 Lint/ImplicitStringConcatenation:
   Exclude:
