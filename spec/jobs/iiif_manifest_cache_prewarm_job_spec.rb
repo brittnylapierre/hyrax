@@ -10,7 +10,6 @@ RSpec.describe IiifManifestCachePrewarmJob do
 
   describe '.perform_now' do
     it 'caches a manifest' do
-      byebug
       expect { described_class.perform_now(work) }
         .to change { Rails.cache.read(cache_key) }
         .from(nil)
